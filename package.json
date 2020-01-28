@@ -1,0 +1,19 @@
+{
+  "name": "meu-curral-api",
+  "version": "1.0.0",
+  "description": "First app for the app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flaice/meu-curral-api.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flaice/meu-curral-api/issues"
+  },
+  "homepage": "https://github.com/flaice/meu-curral-api#readme"
+}
