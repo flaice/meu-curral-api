@@ -1,31 +1,30 @@
 const Sequelize = require('sequelize');
 const sequelize = require('../database/database');
 
-const Users = sequelize.define('users', {
+const Accounts = sequelize.define('accounts', {
   id: {
     allowNull: false,
     autoIncrement: true,
     primaryKey: true,
     type: Sequelize.INTEGER
   },
-  firstName: {
+  name: {
     allowNull: false,
     type: Sequelize.STRING(255),
-    validade: { len: [2, 255] }
+    validate: { len: [2, 255] }
   },
-  lastName: {
+  planLevel: {
     allowNull: false,
-    type: Sequelize.STRING(255),
-    validade: { len: [2, 255] }
+    type: Sequelize.INTEGER
   },
-  birthDate: {
-    allowNull: true,
-    type: Sequelize.DATE
-  },
-  address: {
+  statusID: {
     allowNull: false,
-    type: Sequelize.STRING(255),
-    validade: { len: [2, 255] }
+    type: Sequelize.INTEGER,
+    validate: { len: [2, 255] },
+    references: {
+      model: 'accountStatus',
+      key: 'id'
+    }
   },
   createdAt: {
     type: Sequelize.DATE,
@@ -37,4 +36,4 @@ const Users = sequelize.define('users', {
   }
 });
 
-module.exports = Users;
+module.exports = Accounts;
